@@ -18,8 +18,18 @@ public class Library {
     }
 
     public void listBooks() {
-        for (String book : books) {
-            printStream.println(book);
+        if (books.isEmpty()) {
+            printStream.println("");
+        }
+        else {
+            String s = "";
+            for (String book : books) {
+                s += book;
+                if(books.size() > 1 && books.indexOf(book) != (books.size()-1)) {
+                    s += ", ";
+                }
+            }
+            printStream.println(s);
         }
     }
 
